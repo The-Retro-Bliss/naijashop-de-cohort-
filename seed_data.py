@@ -212,8 +212,11 @@ def main():
     parser.add_argument("--orders", type=int, default=2000)
     parser.add_argument("--load-pg", action="store_true",
                          help="also load the CSVs into Postgres")
-    parser.add_argument("--dsn", default="dbname=naijashop user=postgres password=postgres host=localhost",
-                         help="Postgres connection string, used only with --load-pg")
+    parser.add_argument(
+        "--dsn",
+        default="dbname=naijastores user=naijastores_user password=catalyst7 host=localhost port=5433",
+        help="Postgres connection string, used only with --load-pg",
+    )
     args = parser.parse_args()
 
     print("Generating NaijaShop seed data...")
